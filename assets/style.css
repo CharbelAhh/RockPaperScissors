@@ -44,3 +44,38 @@ body{
 .main .choices div:hover{
     transform: scale(110%)
 }
+
+@keyframes loading{
+    0%{
+        content:"";
+    }
+    25%{
+        content:"."
+    }
+    50%{
+        content:".."
+    }
+    75%{
+        content:"..."
+    }
+    100%{
+        content:""
+    }
+}
+
+.loading {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    transition: 0.2s ease;
+    display: none;
+}
+.loading::after{
+    content:"";
+    animation: loading 1s infinite;
+    font-size: 2.5rem;
+    position: absolute;
+    top:-20%;
+    left:100%;
+}
